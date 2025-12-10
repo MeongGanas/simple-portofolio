@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="min-h-screen flex justify-center flex-col py-20 snap-start" id="home">
+      <div className="min-h-[calc(100vh-80px)] flex justify-center flex-col py-16" id="home">
         <motion.div
           className="container space-y-12 sm:space-y-16 px-5 text-center"
           initial="hidden"
@@ -45,7 +45,7 @@ export default function Home() {
         </motion.div>
       </div>
 
-      <div className="min-h-screen border-t border-black py-20 px-5 snap-start" id="projects">
+      <div className="border-t border-black scroll-mt-20 min-h-[calc(100vh-80px)] py-16 px-5" id="projects">
         <motion.div
           className="container"
           initial="hidden"
@@ -58,8 +58,8 @@ export default function Home() {
         </motion.div>
       </div>
 
-      <div className="min-h-screen border-t border-black px-5 py-20 snap-start" id="about">
-        <div className="container space-y-10">
+      <div className="min-h-[calc(100vh-80px)] border-t border-black px-5 py-16 scroll-mt-20" id="about">
+        <div className="container space-y-16">
           <motion.div
             initial="hidden"
             whileInView="visible"

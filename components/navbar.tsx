@@ -11,7 +11,7 @@ import { useState } from "react";
 
 export default function Navbar() {
     return (
-        <div className="border-b border-black px-4 py-6 fixed top-0 left-0 w-full bg-white z-40">
+        <div className="border-b border-black px-4 py-6 sticky top-0 left-0 w-full bg-white z-40">
             <div className="container flex items-center justify-between">
                 <Link href={'/'} className="font-semibold text-2xl">Farrel Giovanni Jaohari</Link>
 

@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased cursor-none`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased cursor-none overflow-x-hidden`}
       >
         <SmoothScroll />
         <Cursor />
