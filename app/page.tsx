@@ -1,100 +1,124 @@
+"use client";
 import AboutCard from "@/components/aboutCard";
-import Image from "next/image";
-import Link from "next/link";
+import Skills from "@/components/skills";
+import SocialButton from "@/components/socialButton";
+import { motion, Variants } from "framer-motion";
 
 export default function Home() {
+  const fadeInAnimation: Variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    },
+  };
+
   return (
     <>
-      <div className="min-h-screen flex justify-end flex-col py-20" id="home">
-        <div className="container space-y-16 px-5">
+      <div className="min-h-screen flex justify-center flex-col py-20 snap-start" id="home">
+        <motion.div
+          className="container space-y-12 sm:space-y-16 px-5 text-center"
+          initial="hidden"
+          animate="visible"
+          variants={fadeInAnimation}
+        >
           <div className="space-y-6">
             <h4 className="text-lg text-gray-500">Hello,</h4>
-            <h1 className="text-3xl sm:text-5xl xl:text-7xl font-semibold">I'm Farrel, a Fullstack Web Developer and Cybersecurity Enthusiast.</h1>
+            <h1 className="text-3xl sm:text-5xl xl:text-7xl font-semibold">
+              I'm a Fullstack Web Developer and Cybersecurity Enthusiast.
+            </h1>
           </div>
-          <div className="flex items-center gap-5">
-            <Link target="_blank" href={"https://linkedin.com/in/farreljaohari"} className="border border-black py-1 px-3 hover:bg-black hover:text-white transition-all duration-300 text-sm sm:text-base">LinkedIn</Link>
-            <Link target="_blank" href={"https://github.com/MeongGanas"} className="border border-black py-1 px-3 hover:bg-black hover:text-white transition-all duration-300 text-sm sm:text-base">Github</Link>
-            <Link target="_blank" href={"https://instagram.com/farreljaoharii"} className="border border-black py-1 px-3 hover:bg-black hover:text-white transition-all duration-300 text-sm sm:text-base">Instagram</Link>
-            <Link target="_blank" href={"mailto:farreluken@gmail.com"} className="border border-black py-1 px-3 hover:bg-black hover:text-white transition-all duration-300 text-sm sm:text-base">Mail</Link>
+          <div className="flex items-center gap-5 justify-center">
+            <motion.div
+              className="flex gap-5"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+            >
+              <SocialButton href={"https://farreljaohari.my.id"} label="LinkedIn" />
+              <SocialButton href={"https://github.com/MeongGanas"} label="Github" />
+              <SocialButton href={"https://instagram.com/farreljaoharii"} label="Instagram" />
+              <SocialButton href={"mailto:farreluken@gmail.com"} label="Mail" />
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      <div className="min-h-screen border-t border-black py-20 px-5" id="projects">
-        <div className="container">
+      <div className="min-h-screen border-t border-black py-20 px-5 snap-start" id="projects">
+        <motion.div
+          className="container"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeInAnimation}
+        >
           <h1 className="text-3xl sm:text-5xl font-semibold">Selected Projects</h1>
-
           <h1 className="text-center text-8xl mt-36">Soon.</h1>
-        </div>
+        </motion.div>
       </div>
 
-      <div className="border-t border-black px-5 py-20" id="about">
+      <div className="min-h-screen border-t border-black px-5 py-20 snap-start" id="about">
         <div className="container space-y-10">
-          <h1 className="text-3xl sm:text-5xl font-semibold">About Me</h1>
-          <p className="text-lg sm:text-2xl text-gray-500 space-y-5">
-            <span className="block">
-              I’m a Computer Science student at Universitas Hasanuddin with a relentless curiosity for how systems work—from the high-level web interface down to the binary level.
-
-              My core passion lies in Cybersecurity. I am an active Capture The Flag (CTF) player, where I spend my time solving complex challenges in Reverse Engineering, Cryptography, and Web Exploitation. I enjoy the process of deconstructing C binaries, analyzing boot sectors, or crafting scripts in Python to break encryption schemes.
-            </span>
-
-            <span className="block">
-              Beyond security, I am a capable developer with a strong foundation in Python and modern web technologies like Next.js, React, and Laravel.
-              I am always looking for the next challenge to solve. Let's connect!
-            </span>
-          </p>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeInAnimation}
+          >
+            <h1 className="text-3xl sm:text-5xl font-semibold mb-10">About Me</h1>
+            <p className="text-lg sm:text-2xl text-gray-500 space-y-5">
+              <span className="block">
+                I’m a Computer Science student at Universitas Hasanuddin with a relentless curiosity for building scalable and efficient web systems.
+              </span>
+              <span className="block">
+                My core passion lies in Full-Stack Web Development. I specialize in crafting seamless user experiences using React and Next.js, while architecting robust backends with Laravel or Next.js. I enjoy the entire development lifecycle—from designing intuitive interfaces to optimizing database queries and API performance.
+              </span>
+              <span className="block">
+                I am a problem solver at heart, always eager to learn new technologies and translate complex requirements into clean, maintainable code. I am looking for the next challenge to build something impactful.
+              </span>
+            </p>
+          </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
-            <div className="space-y-8">
+            <motion.div
+              className="space-y-8"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
               <h2 className="text-2xl sm:text-4xl font-semibold">Experience</h2>
+              <AboutCard
+                title="Fullstack Web Developer Intern"
+                subtitle="PT. Celebes Solusi Digital"
+                date="November 2024 - February 2025"
+                description="Developed a custom Laravel CMS to manage landing page content and enhance customer engagement using Laravel."
+              />
+            </motion.div>
 
-              <AboutCard title="Fullstack Web Developer Intern" subtitle="PT. Celebes Solusi Digital" date="November 2024 - February 2025" description="Developed a custom Laravel CMS to manage landing page content and enhance customer engagement using Laravel." />
-            </div>
-            <div className="space-y-8">
+            <motion.div
+              className="space-y-8"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
               <h2 className="text-2xl sm:text-4xl font-semibold">Education</h2>
-
               <AboutCard title="Universitas Hasanuddin" subtitle="Computer Science" date="August 2025 - Present" />
-            </div>
+            </motion.div>
           </div>
 
-          <div className="space-y-8">
+          <motion.div
+            className="space-y-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInAnimation}
+          >
             <h2 className="text-2xl sm:text-4xl font-semibold">Skills</h2>
-            <ul className="flex flex-wrap justify-evenly gap-10">
-              <li>
-                <Image src={"/nextdotjs.svg"} width={75} height={75} alt="Nextjs" />
-              </li>
-              <li>
-                <Image src={"/react.svg"} width={75} height={75} alt="React" />
-              </li>
-              <li>
-                <Image src={"/typescript.svg"} width={75} height={75} alt="Typescript" />
-              </li>
-              <li>
-                <Image src={"/tailwindcss.svg"} width={75} height={75} alt="Tailwind CSS" />
-              </li>
-              <li>
-                <Image src={"/shadcnui.svg"} width={75} height={75} alt="Shadcn UI" />
-              </li>
-              <li>
-                <Image src={"/supabase.svg"} width={75} height={75} alt="Supabase" />
-              </li>
-              <li>
-                <Image src={"/laravel.svg"} width={75} height={75} alt="Laravel" />
-              </li>
-              <li>
-                <Image src={"/php.svg"} width={75} height={75} alt="PHP" />
-              </li>
-              <li>
-                <Image src={"/mysql.svg"} width={75} height={75} alt="MySQL" />
-              </li>
-              <li>
-                <Image src={"/supabase.svg"} width={75} height={75} alt="Supabase" />
-              </li>
-              <li>
-                <Image src={"/python.svg"} width={75} height={75} alt="Python" />
-              </li>
-            </ul>
-          </div>
+            <Skills />
+          </motion.div>
         </div>
       </div>
     </>

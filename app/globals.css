@@ -121,12 +121,12 @@
     }
 }
 
-html {
-    scroll-behavior: smooth;
+* {
+    cursor: none !important;
 }
 
-body {
-    background: #ffffff66;
+html {
+    scroll-behavior: smooth;
 }
 
 .container {

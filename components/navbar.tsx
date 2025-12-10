@@ -11,7 +11,7 @@ import { useState } from "react";
 
 export default function Navbar() {
     return (
-        <div className="border-b border-black px-4 py-6 fixed top-0 left-0 w-full bg-white z-50">
+        <div className="border-b border-black px-4 py-6 fixed top-0 left-0 w-full bg-white z-40">
             <div className="container flex items-center justify-between">
                 <Link href={'/'} className="font-semibold text-2xl">Farrel Giovanni Jaohari</Link>
 
@@ -27,7 +27,7 @@ export default function Navbar() {
                             <Link href={'#resume'} className="text-lg">Resume</Link>
                         </li>
                         <li>
-                            <Link href={'#contact'} className="text-lg bg-black text-white px-3 py-2">Contact</Link>
+                            <Link href={'#contact'} className="text-lg bg-black border-2 border-black text-white px-4 py-2 hover:bg-white hover:text-black transition-all duration-300">Contact</Link>
                         </li>
                     </ul>
                 </nav>
