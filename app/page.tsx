@@ -36,7 +36,7 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
             >
-              <SocialButton href={"https://farreljaohari.my.id"} label="LinkedIn" />
+              <SocialButton href={"https://linkedin.com/in/farreljaohari"} label="LinkedIn" />
               <SocialButton href={"https://github.com/MeongGanas"} label="Github" />
               <SocialButton href={"https://instagram.com/farreljaoharii"} label="Instagram" />
               <SocialButton href={"mailto:farreluken@gmail.com"} label="Mail" />
