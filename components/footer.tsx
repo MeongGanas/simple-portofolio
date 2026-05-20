@@ -1,7 +1,8 @@
 "use client";
 import { Parisienne } from "next/font/google";
 import Link from "next/link";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
+import { fadeInAnimation } from "@/lib/utils";
 
 const parisienne = Parisienne({
     variable: "--font-parisienne",
@@ -10,16 +11,6 @@ const parisienne = Parisienne({
 });
 
 export default function Footer() {
-    const fadeInAnimation: Variants = {
-        hidden: { opacity: 0, y: 50 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.8, ease: "easeOut" }
-        },
-    };
-
-
     return (
         <div className="border-t border-black" id="contact">
             <motion.div
