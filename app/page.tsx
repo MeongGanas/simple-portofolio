@@ -1,8 +1,11 @@
 "use client";
 import AboutCard from "@/components/aboutCard";
+import ProjectCard from "@/components/projectCard";
 import Skills from "@/components/skills";
 import SocialButton from "@/components/socialButton";
 import { motion, Variants } from "framer-motion";
+import Link from "next/link";
+
 
 export default function Home() {
   const fadeInAnimation: Variants = {
@@ -45,20 +48,25 @@ export default function Home() {
         </motion.div>
       </div>
 
-      <div className="border-t border-black scroll-mt-20 min-h-[calc(100vh-80px)] py-16 px-5" id="projects">
+      <div className="border-t border-black scroll-mt-20 min-h-[calc(100vh-80px)] py-16 px-5 flex items-center" id="projects">
         <motion.div
-          className="container"
+          className="container space-y-10"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={fadeInAnimation}
         >
-          <h1 className="text-3xl sm:text-5xl font-semibold">Selected Projects</h1>
-          <h1 className="text-center text-8xl mt-36">Soon.</h1>
+          <h1 className="text-3xl sm:text-5xl font-semibold">Recent Projects</h1>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 justify-center">
+            <ProjectCard />
+            <ProjectCard />
+            <ProjectCard />
+          </div>
+          <Link href={"/projects"} className="block w-fit mx-auto border-2 border-black px-8 py-3 sm:py-4 hover:bg-black hover:text-white transition-all duration-300">All Projects</Link>
         </motion.div>
       </div>
 
-      <div className="min-h-[calc(100vh-80px)] border-t border-black px-5 py-16 scroll-mt-20" id="about">
+      <div className="border-t border-black px-5 py-16 scroll-mt-20" id="about">
         <div className="container space-y-16">
           <motion.div
             initial="hidden"
@@ -80,7 +88,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 overflow-x-hidden">
             <motion.div
               className="space-y-8"
               initial={{ opacity: 0, x: -50 }}
