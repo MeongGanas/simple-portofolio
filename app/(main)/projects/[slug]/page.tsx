@@ -60,7 +60,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                             className="w-full"
                         />
                     </div>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 gap-1">
                         Website link:
                         <Link href={project.link ?? ""} target="_blank" className="underline hover:opacity-70 transition">{project.link}</Link>
                     </p>
