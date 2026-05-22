@@ -24,7 +24,6 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
     const { slug } = await params;
 
     const project: Projects = await client.fetch(SINGLE_PROJECT_QUERY, { slug });
-    console.log(project)
 
     const tokens = await codeToTokens(project.core_code?.code ?? "", {
         lang: (project.core_code?.language ?? "javascript") as any,
@@ -38,11 +37,10 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
     return (
         <div className="py-28">
-
             <ProjectWrapper>
                 <h1 className="title">{project.title}</h1>
                 <div className="mb-5">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-2">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 mb-2">
                         <Image
                             src={urlFor(project.image_1).url()}
                             width={0}
