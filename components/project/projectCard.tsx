@@ -2,6 +2,7 @@
 import { urlFor } from '@/lib/image';
 import { Projects } from '@/sanity.types';
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import Image from "next/image";
 import Link from "next/link";
 
@@ -24,7 +25,10 @@ export default function ProjectCard({ project }: { project: Projects }) {
             <div className="p-4 space-y-2">
                 <h3 className="text-xl sm:text-2xl font-semibold">{project.title}</h3>
                 <p className="text-gray-600 text-base sm:text-lg">{project.description}</p>
-                <Link href={`/projects/${project.slug}`} className="hover:underline">Click for detail</Link>
+                <Link href={`/projects/${project.slug}`} className="flex items-center gap-2 hover:underline text-base sm:text-lg">
+                    <span>Click for detail</span>
+                    <ArrowRight className='w-5 h-5' />
+                </Link>
             </div>
         </motion.div>
     )

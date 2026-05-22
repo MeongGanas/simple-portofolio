@@ -31,13 +31,6 @@ export type Projects = {
   title?: string;
   slug?: Slug;
   description?: string;
-  core_code_image?: {
-    asset?: SanityImageAssetReference;
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
-  };
   publishedAt?: string;
   thumbnail?: {
     asset?: SanityImageAssetReference;
@@ -46,6 +39,7 @@ export type Projects = {
     crop?: SanityImageCrop;
     _type: "image";
   };
+  core_code?: Code;
   image_1?: {
     asset?: SanityImageAssetReference;
     media?: unknown;
@@ -78,6 +72,7 @@ export type Projects = {
     _type: "block";
     _key: string;
   }>;
+  link?: string;
 };
 
 export type SanityImageCrop = {
@@ -94,6 +89,14 @@ export type SanityImageHotspot = {
   y?: number;
   height?: number;
   width?: number;
+};
+
+export type Code = {
+  _type: "code";
+  language?: string;
+  filename?: string;
+  code?: string;
+  highlightedLines?: Array<number>;
 };
 
 export type Slug = {
@@ -204,6 +207,7 @@ export type AllSanitySchemaTypes =
   | Projects
   | SanityImageCrop
   | SanityImageHotspot
+  | Code
   | Slug
   | SanityImagePaletteSwatch
   | SanityImagePalette

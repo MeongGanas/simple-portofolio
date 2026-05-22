@@ -127,8 +127,13 @@
 
 html {
     scroll-behavior: smooth;
+    data-scroll-behavior: smooth;
 }
 
 .container {
-    @apply max-w-7xl mx-auto;
+    @apply max-w-7xl mx-auto px-5;
+}
+
+.title {
+    @apply text-3xl sm:text-5xl font-semibold mb-8;
 }

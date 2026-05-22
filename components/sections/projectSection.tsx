@@ -18,7 +18,7 @@ export default async function ProjectSection() {
     return (
         <div className="border-t border-black scroll-mt-20 min-h-[calc(100vh-80px)] py-16 px-5 flex items-center" id="projects">
             <ProjectWrapper>
-                <h1 className="text-3xl sm:text-5xl font-semibold">Recent Projects</h1>
+                <h1 className="title">Recent Projects</h1>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 justify-center">
                     {projects.map((project: Projects) => (
                         <ProjectCard key={project._id} project={project} />

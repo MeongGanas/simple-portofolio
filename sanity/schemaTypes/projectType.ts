@@ -22,10 +22,6 @@ export const projectType = defineType({
             validation: (rule) => rule.required(),
         }),
         defineField({
-            name: "core_code_image",
-            type: "image",
-        }),
-        defineField({
             name: "publishedAt",
             type: "datetime",
             initialValue: () => new Date().toISOString(),
@@ -34,6 +30,11 @@ export const projectType = defineType({
         defineField({
             name: "thumbnail",
             type: "image",
+            validation: (rule) => rule.required(),
+        }),
+        defineField({
+            name: "core_code",
+            type: "code",
             validation: (rule) => rule.required(),
         }),
         defineField({
@@ -50,6 +51,11 @@ export const projectType = defineType({
             name: "body",
             type: "array",
             of: [{ type: "block" }],
+            validation: (rule) => rule.required(),
+        }),
+        defineField({
+            name: "link",
+            type: "string",
             validation: (rule) => rule.required(),
         }),
     ],

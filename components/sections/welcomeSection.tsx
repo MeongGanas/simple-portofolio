@@ -5,7 +5,7 @@ import SocialButton from "../socialButton";
 
 export default function WelcomeSection() {
     return (
-        <div className="min-h-[calc(100vh-80px)] flex justify-center flex-col py-16" id="home">
+        <div className="min-h-screen flex justify-center flex-col py-16" id="home">
             <motion.div
                 className="container space-y-12 sm:space-y-16 px-5 text-center"
                 initial="hidden"
@@ -14,11 +14,11 @@ export default function WelcomeSection() {
             >
                 <div className="space-y-6">
                     <h4 className="text-lg text-gray-500">Hello,</h4>
-                    <h1 className="text-3xl sm:text-5xl xl:text-7xl font-semibold">
+                    <h1 className="text-4xl sm:text-5xl xl:text-7xl font-semibold">
                         I'm a Fullstack Web Developer and Cybersecurity Enthusiast.
                     </h1>
                 </div>
-                <div className="flex items-center gap-5 justify-center">
+                <div className="flex items-center gap-3 sm:gap-5 justify-center">
                     <motion.div
                         className="flex gap-5"
                         initial={{ opacity: 0 }}

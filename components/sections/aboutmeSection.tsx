@@ -14,7 +14,7 @@ export default function AboutMeSection() {
                     viewport={{ once: true, amount: 0.2 }}
                     variants={fadeInAnimation}
                 >
-                    <h1 className="text-3xl sm:text-5xl font-semibold mb-10">About Me</h1>
+                    <h1 className="title">About Me</h1>
                     <p className="text-lg sm:text-2xl text-gray-500 space-y-5">
                         <span className="block">
                             I’m a Computer Science student at Universitas Hasanuddin with a relentless curiosity for building scalable and efficient web systems.
