@@ -7,7 +7,7 @@ export default function WelcomeSection() {
     return (
         <div className="min-h-screen flex justify-center flex-col py-16" id="home">
             <motion.div
-                className="container space-y-12 sm:space-y-16 px-5 text-center"
+                className="container space-y-12 sm:space-y-16 text-center"
                 initial="hidden"
                 animate="visible"
                 variants={fadeInAnimation}

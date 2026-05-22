@@ -6,7 +6,7 @@ import Skills from "../skills";
 
 export default function AboutMeSection() {
     return (
-        <div className="border-t border-black px-5 py-16 scroll-mt-20" id="about">
+        <div className="border-t border-black py-16 scroll-mt-20" id="about">
             <div className="container space-y-16">
                 <motion.div
                     initial="hidden"
