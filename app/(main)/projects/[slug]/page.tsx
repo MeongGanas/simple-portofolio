@@ -61,13 +61,13 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                             className="w-full border aspect-video object-cover"
                         />
                     </div>
-                    <div className="flex justify-between w-full">
+                    <div className="flex justify-between flex-wrap w-full space-y-1 sm:space-y-1">
                         <p className="text-gray-600 flex items-center gap-1">
                             <span className="block">Website link:</span>
-                            <Link href={project.deploy_link ?? ""} target="_blank" className="underline hover:opacity-70 transition">{project.deploy_link}</Link>
+                            <Link href={project.deploy_link?.startsWith("http") ? project.deploy_link : ""} target="_blank" className="underline hover:opacity-70 transition">{project.deploy_link}</Link>
                         </p>
                         <p className="text-gray-600 flex items-center gap-1">
-                            {format(project.start_date ?? "", 'dd-MM-y')} - {format(project.finish_date ?? "", 'dd-MM-y')}
+                            Start: {format(project.start_date ?? "", 'dd/MM/y')} - End: {format(project.finish_date ?? "", 'dd/MM/y')}
                         </p>
                     </div>
                 </div>
