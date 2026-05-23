@@ -20,7 +20,7 @@ export default function ProjectCard({ project }: { project: Projects }) {
                 height={0}
                 alt={project.title || ""}
                 sizes="100vw"
-                style={{ width: '100%', height: 'auto' }}
+                className='w-full aspect-video object-cover'
             />
             <div className="p-4 space-y-2">
                 <h3 className="text-xl sm:text-2xl font-semibold">{project.title}</h3>

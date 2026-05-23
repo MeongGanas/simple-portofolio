@@ -8,6 +8,7 @@ import BackButton from "@/components/backButton";
 import { codeToTokens } from 'shiki';
 import CodeBlockRenderer from "@/components/project/blockCode";
 import ProjectWrapper from "@/components/project/projectWrapper";
+import { format } from 'date-fns'
 
 const SINGLE_PROJECT_QUERY = `*[_type == "projects" && slug.current == $slug][0] {
     title,
@@ -17,7 +18,9 @@ const SINGLE_PROJECT_QUERY = `*[_type == "projects" && slug.current == $slug][0]
     image_2,
     body,
     publishedAt,
-    link
+    start_date,
+    finish_date,
+    deploy_link
 }`;
 
 export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -47,7 +50,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                             height={0}
                             alt={project.title || ""}
                             sizes="100vw"
-                            className="w-full"
+                            className="w-full border aspect-video object-cover"
                         />
                         <Image
                             src={urlFor(project.image_2).url()}
@@ -55,13 +58,18 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                             height={0}
                             alt={project.title || ""}
                             sizes="100vw"
-                            className="w-full"
+                            className="w-full border aspect-video object-cover"
                         />
                     </div>
-                    <p className="text-gray-600 flex items-center gap-1">
-                        <span className="block">Website link:</span>
-                        <Link href={project.link ?? ""} target="_blank" className="underline hover:opacity-70 transition">{project.link}</Link>
-                    </p>
+                    <div className="flex justify-between w-full">
+                        <p className="text-gray-600 flex items-center gap-1">
+                            <span className="block">Website link:</span>
+                            <Link href={project.deploy_link ?? ""} target="_blank" className="underline hover:opacity-70 transition">{project.deploy_link}</Link>
+                        </p>
+                        <p className="text-gray-600 flex items-center gap-1">
+                            {format(project.start_date ?? "", 'dd-MM-y')} - {format(project.finish_date ?? "", 'dd-MM-y')}
+                        </p>
+                    </div>
                 </div>
 
                 <div className="space-y-2 mb-5">

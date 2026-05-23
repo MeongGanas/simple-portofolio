@@ -31,7 +31,6 @@ export type Projects = {
   title?: string;
   slug?: Slug;
   description?: string;
-  publishedAt?: string;
   thumbnail?: {
     asset?: SanityImageAssetReference;
     media?: unknown;
@@ -39,7 +38,6 @@ export type Projects = {
     crop?: SanityImageCrop;
     _type: "image";
   };
-  core_code?: Code;
   image_1?: {
     asset?: SanityImageAssetReference;
     media?: unknown;
@@ -54,6 +52,7 @@ export type Projects = {
     crop?: SanityImageCrop;
     _type: "image";
   };
+  core_code?: Code;
   body?: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -72,7 +71,18 @@ export type Projects = {
     _type: "block";
     _key: string;
   }>;
-  link?: string;
+  deploy_link?: string;
+  start_date?: string;
+  finish_date?: string;
+  publishedAt?: string;
+};
+
+export type Code = {
+  _type: "code";
+  language?: string;
+  filename?: string;
+  code?: string;
+  highlightedLines?: Array<number>;
 };
 
 export type SanityImageCrop = {
@@ -89,14 +99,6 @@ export type SanityImageHotspot = {
   y?: number;
   height?: number;
   width?: number;
-};
-
-export type Code = {
-  _type: "code";
-  language?: string;
-  filename?: string;
-  code?: string;
-  highlightedLines?: Array<number>;
 };
 
 export type Slug = {
@@ -205,9 +207,9 @@ export type Geopoint = {
 export type AllSanitySchemaTypes =
   | SanityImageAssetReference
   | Projects
+  | Code
   | SanityImageCrop
   | SanityImageHotspot
-  | Code
   | Slug
   | SanityImagePaletteSwatch
   | SanityImagePalette

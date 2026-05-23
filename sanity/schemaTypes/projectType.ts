@@ -22,19 +22,8 @@ export const projectType = defineType({
             validation: (rule) => rule.required(),
         }),
         defineField({
-            name: "publishedAt",
-            type: "datetime",
-            initialValue: () => new Date().toISOString(),
-            validation: (rule) => rule.required(),
-        }),
-        defineField({
             name: "thumbnail",
             type: "image",
-            validation: (rule) => rule.required(),
-        }),
-        defineField({
-            name: "core_code",
-            type: "code",
             validation: (rule) => rule.required(),
         }),
         defineField({
@@ -48,14 +37,34 @@ export const projectType = defineType({
             validation: (rule) => rule.required(),
         }),
         defineField({
+            name: "core_code",
+            type: "code",
+            validation: (rule) => rule.required(),
+        }),
+        defineField({
             name: "body",
             type: "array",
             of: [{ type: "block" }],
             validation: (rule) => rule.required(),
         }),
         defineField({
-            name: "link",
+            name: "deploy_link",
             type: "string",
+        }),
+        defineField({
+            name: "start_date",
+            type: "date",
+            validation: (rule) => rule.required(),
+        }),
+        defineField({
+            name: "finish_date",
+            type: "date",
+            validation: (rule) => rule.required(),
+        }),
+        defineField({
+            name: "publishedAt",
+            type: "datetime",
+            initialValue: () => new Date().toISOString(),
             validation: (rule) => rule.required(),
         }),
     ],

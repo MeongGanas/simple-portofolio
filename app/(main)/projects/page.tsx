@@ -1,15 +1,8 @@
 import ProjectCard from '@/components/project/projectCard';
 import ProjectWrapper from '@/components/project/projectWrapper';
+import { PROJECTS_QUERY } from '@/lib/query';
 import { Projects } from '@/sanity.types';
 import { client } from '@/sanity/lib/client';
-
-const PROJECTS_QUERY = `*[_type == "projects"] | order(publishedAt desc) {
-    _id,
-    title,
-    "slug": slug.current,
-    description,
-    thumbnail
-}`;
 
 export default async function ProjectsPage() {
     const projects = await client.fetch(PROJECTS_QUERY);
