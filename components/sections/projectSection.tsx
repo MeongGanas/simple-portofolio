@@ -9,7 +9,7 @@ export default async function ProjectSection() {
     const projects = await client.fetch(PROJECTS_QUERY);
 
     return (
-        <div className="border-t border-black scroll-mt-20 min-h-[calc(100vh-80px)] py-1 flex items-center" id="projects">
+        <div className="border-t border-black scroll-mt-20 min-h-[calc(100vh-80px)] py-20 flex items-center" id="projects">
             <ProjectWrapper>
                 <h1 className="title">Recent Projects</h1>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 justify-center">
