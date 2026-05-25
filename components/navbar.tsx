@@ -75,8 +75,7 @@ function Hamburger() {
                     </li>
                     <li>
                         <Link
-                            href={'#resume'}
-                            onClick={() => setOpen(false)}
+                            href={'https://drive.google.com/file/d/1TWKZDecBpPEZIFcCdogCK8U1NY7ZpHRV/view?usp=sharing'} target="_blank"
                             className="text-lg flex gap-3 text-gray-600 hover:text-black transition-all duration-300"
                         >
                             <span className="text-xs text-gray-400 mt-2">03</span>Resume
