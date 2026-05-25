@@ -24,7 +24,7 @@ export default function Navbar() {
                             <Link href={'/#about'} className="text-lg">About</Link>
                         </li>
                         <li>
-                            <Link href={'/#resume'} className="text-lg">Resume</Link>
+                            <Link href={'https://drive.google.com/file/d/1TWKZDecBpPEZIFcCdogCK8U1NY7ZpHRV/view?usp=sharing'} target="_blank" className="text-lg">Resume</Link>
                         </li>
                         <li>
                             <Link href={'#contact'} className="text-lg bg-black border-2 border-black text-white px-4 py-2 hover:bg-white hover:text-black transition-all duration-300">Contact</Link>
