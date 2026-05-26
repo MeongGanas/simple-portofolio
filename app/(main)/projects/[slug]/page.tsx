@@ -26,7 +26,7 @@ const SINGLE_PROJECT_QUERY = `*[_type == "projects" && slug.current == $slug][0]
 export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
 
-    const project: Projects = await client.fetch(SINGLE_PROJECT_QUERY, { slug });
+    const project: Projects = await client.fetch(SINGLE_PROJECT_QUERY, { slug }, { next: { tags: ['projects'] } });
 
     const tokens = await codeToTokens(project.core_code?.code ?? "", {
         lang: (project.core_code?.language ?? "javascript") as any,
