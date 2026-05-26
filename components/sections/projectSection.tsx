@@ -3,7 +3,14 @@ import ProjectCard from "../project/projectCard";
 import ProjectWrapper from "../project/projectWrapper";
 import { client } from "@/sanity/lib/client";
 import { Projects } from "@/sanity.types";
-import { PROJECTS_QUERY } from "@/lib/query";
+
+const PROJECTS_QUERY = `*[_type == "projects" && defined(finish_date)] | order(finish_date desc)[0...3] {
+    _id,
+    title,
+    "slug": slug.current,
+    description,
+    thumbnail,
+}`;
 
 export default async function ProjectSection() {
     const projects = await client.fetch(
