@@ -6,7 +6,11 @@ import { Projects } from "@/sanity.types";
 import { PROJECTS_QUERY } from "@/lib/query";
 
 export default async function ProjectSection() {
-    const projects = await client.fetch(PROJECTS_QUERY);
+    const projects = await client.fetch(
+        PROJECTS_QUERY,
+        {},
+        { next: { tags: ['projects'] } }
+    );
 
     return (
         <div className="border-t border-black scroll-mt-20 min-h-[calc(100vh-80px)] py-20 flex items-center" id="projects">

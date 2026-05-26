@@ -5,7 +5,11 @@ import { Projects } from '@/sanity.types';
 import { client } from '@/sanity/lib/client';
 
 export default async function ProjectsPage() {
-    const projects = await client.fetch(PROJECTS_QUERY);
+    const projects = await client.fetch(
+        PROJECTS_QUERY,
+        {},
+        { next: { tags: ['projects'] } }
+    );
 
     return (
         <div className="scroll-mt-20 min-h-screen py-28 px-5 flex items-center" id="projects">
